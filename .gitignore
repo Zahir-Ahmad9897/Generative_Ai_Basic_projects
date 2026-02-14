@@ -1,4 +1,4 @@
-# Python
+# --- Python ---
 __pycache__/
 *.py[cod]
 *$py.class
@@ -20,7 +20,7 @@ wheels/
 .installed.cfg
 *.egg
 
-# Virtual Environments
+# --- Virtual Environments ---
 .env
 .venv
 env/
@@ -29,27 +29,52 @@ ENV/
 env.bak/
 venv.bak/
 
-# Jupyter Notebook
+# --- Jupyter Notebook ---
 .ipynb_checkpoints
 */.ipynb_checkpoints/*
 
-# Environment Variables & API Keys
+# --- Environment Variables & API Keys ---
 .env
 .env.local
-*.env
+.env.*
+!.env.example
 
-# IDEs
+# --- IDEs ---
 .vscode/
 .idea/
 *.swp
 *.swo
 *~
 
-# OS
+# --- OS ---
 .DS_Store
 Thumbs.db
+Desktop.ini
 
-# Project specific
+# --- LangChain & AI Specific ---
+# Vector Store Indexes (FAISS)
+*.index
+*.pkl
+faiss_index/
+
+# Vector Databases (Chroma)
+chroma/
+*.db
+*.sqlite
+
+# Data files (usually ignored if they are large datasets)
+*.pdf
+*.csv
+*.xlsx
+*.json
+!pyproject.toml
+!package.json
+
+# Local HuggingFace/Model caches
+.cache/
+hub/
+
+# --- Other ---
 *.log
 *.tmp
 temp.json
