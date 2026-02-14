@@ -18,10 +18,16 @@ prompt = ChatPromptTemplate.from_messages([
 chain = prompt | llm | StrOutputParser()
 ```
 
-**Jsonoutput_parser.ipynb** - JSON Output Parser (Learning through debugging)
-- Attempted to get structured JSON responses from LLM
-- Hit errors when LLM returned plain text instead of JSON
-- Learned the critical lesson: **Format instructions MUST be in the prompt**
+**Json_output_parser.ipynb** - JSON Output Parser
+- Built a robust chain to get raw JSON responses from LLM
+- Used `JsonOutputParser` to ensure output is valid JSON
+- Learned the critical lesson: **Format instructions MUST be in the prompt** using `parser.get_format_instructions()`
+
+**Structure_output_parser.ipynb** - Structured Output Parser (ResponseSchema)
+- Implemented `StructuredOutputParser` using `ResponseSchema` objects
+- Defined strict schemas for extracting specific data (name, age, gender)
+- Learned how to use `from_response_schemas` for typed extraction
+- Successfully extracted structured dictionaries from natural language text
 
 ## Critical Learning: The Format Instructions Problem
 
@@ -57,9 +63,10 @@ prompt = PromptTemplate(
 ## Key Insights
 
 1. **StrOutputParser is simple** - Just extracts the text content from AIMessage
-2. **JsonOutputParser is powerful BUT needs format instructions**  
-3. **The parser doesn't control the LLM** - your prompt does
-4. **Debugging parsing errors taught me more than success would have**
+2. **JsonOutputParser is powerful** - Forces JSON structure via prompt instructions
+3. **StructuredOutputParser is for complex schemas** - Uses `ResponseSchema` for multi-field extraction
+4. **The parser doesn't control the LLM** - your prompt does
+5. **Debugging parsing errors taught me more than success would have**
 
 ## String Parser Success
 

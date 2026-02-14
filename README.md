@@ -42,10 +42,12 @@ This project demonstrates working implementations of LangChain components integr
 - Compared different LLM providers and their performance
 
 ### 03_output_parsers - Structured Data
-- Implemented StrOutputParser for clean text extraction
-- Learned the importance of format instructions in prompts
-- Built chains that return structured responses instead of raw LLM output
-- Debugged common parsing errors (this was a valuable learning experience)
+- Implemented `StrOutputParser` for clean text extraction
+- Mastered `JsonOutputParser` to get raw JSON objects directly from the LLM
+- Implemented `StructuredOutputParser` with `ResponseSchema` for multi-field data extraction
+- Learned the importance of injecting format instructions into prompts using `partial_variables`
+- Successfully built chains that return typed dictionaries (e.g., extracting person details: name, age, gender)
+- Debugged and solved common parsing errors (e.g., "unhashable type" and missing format instructions)
 
 ### 04_data_ingestion - Document Processing
 - Loaded PDFs using PyPDFLoader with metadata extraction
