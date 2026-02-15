@@ -8,6 +8,7 @@ dependencies = [
     "bs4>=0.0.2",
     "dotenv>=0.9.9",
     "faiss-cpu>=1.13.2",
+    "grandalf>=0.8",
     "huggingface-hub>=0.33.4",
     "ipykernel>=6.29.5",
     "langchain>=0.3.26",

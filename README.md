@@ -9,6 +9,7 @@ This repository contains a comprehensive collection of implementations focused o
 *   **03_output_parsers**: Advanced techniques for extracting structured data and validating model responses.
 *   **04_data_ingestion**: Scalable document processing from PDF, CSV, JSON, and web sources.
 *   **05_embeddings**: Vector-based data representation and retrieval strategies.
+*   **Chain_in_Langchain**: Advanced orchestration using LangChain Expression Language (LCEL).
 
 ## Technical Stack
 
@@ -34,6 +35,12 @@ Robust pipeline for ingesting unstructured data sources.
 
 ### API Deployment
 Production-ready deployment of LangChain chains as RESTful endpoints via FastAPI and LangServe, enabling seamless integration with external applications.
+
+### Chain Orchestration (LCEL)
+Implementation of complex workflows using the LangChain Expression Language.
+*   **Sequential Logic**: Multi-step processing where data flows linearly through components.
+*   **Parallel Execution**: Concurrent operation execution for optimized performance.
+*   **Dynamic Routing**: Use of `RunnableBranch` and `RunnableLambda` for conditional logic and runtime decision making.
 
 ## Installation
 
