@@ -70,5 +70,3 @@ Implementation of complex workflows using the LangChain Expression Language.
 *   **Development**: Access the implementation details via Jupyter Notebooks for interactive testing.
 *   **Production**: Deploy the API server using `uvicorn serve:app --reload` within the relevant module directory.
 
----
-*Professional implementation of LangChain and Generative AI patterns.*
