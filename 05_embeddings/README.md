@@ -1,44 +1,30 @@
-# 05 | Text Embeddings & Vector Search
+# Text Embeddings and Vector Retrieval Systems
 
-This module focuses on converting text into numerical vectors (Embeddings) and performing semantic similarity searches using **FAISS** and **HuggingFace**.
+This module focuses on the implementation of semantic search architectures through text vectorization and high-performance similarity indexing.
 
-##  Features Implemented
-- **Data Ingestion**: Loading PDF documents using `PyPDFLoader`.
-- **Text Splitting**: Utilizing `RecursiveCharacterTextSplitter` to create meaningful document chunks.
-- **Open Source Embeddings**: Implementing `BAAI/bge-small-en` from HuggingFace for efficient, local vector generation.
-- **Vector Storage**: Using **FAISS** (Facebook AI Similarity Search) for high-performance vector retrieval.
+## Core Technical Implementations
 
-##  Tech Stack
-- **LangChain**: Framework for LLM application development.
-- **PyTorch (CPU)**: Backend engine for running embedding models locally.
-- **FAISS-CPU**: Library for efficient similarity search.
-- **HuggingFace Hub**: Source for open-source transformer models.
+### Semantic Vectorization Pipeline
+*   **Infrastructure:** Implementation of local embedding generation utilizing the `BAAI/bge-small-en` architecture via Hugging Face.
+*   **Vector Storage:** Integrated **FAISS** (Facebook AI Similarity Search) for optimized, high-throughput retrieval.
+*   **Data Processing:** Development of a multi-stage pipeline:
+    1.  **Ingestion**: Extraction of data via `PyPDFLoader`.
+    2.  **Transformation**: Dimensionality management using `RecursiveCharacterTextSplitter`.
+    3.  **Vectorization**: Encoding textual data into numerical space using PyTorch-based inference.
 
-##  Troubleshooting (Windows Setup)
-During development, we resolved several critical environment issues specific to Windows 10/11:
+## Technical Insights and troubleshooting
 
-1. **OSError: [WinError 1114]**: 
-   - **Cause**: Standard PyTorch attempting to load missing/incompatible CUDA DLLs.
-   - **Fix**: Installed the CPU-only version of PyTorch:
-     ```powershell
-     uv pip install torch --index-url https://download.pytorch.org/whl/cpu
-     ```
+### Environment Optimization (Windows Architecture)
+The module documentation includes standardized procedures for resolving platform-specific environmental conflicts:
 
-2. **Access Denied (OS Error 5)**:
-   - **Cause**: Attempting to update packages while the Jupyter Kernel is active.
-   - **Fix**: Forcefully stopping Python processes before running `uv add`:
-     ```powershell
-     Stop-Process -Name "python" -Force
-     ```
+*   **Inference Backend Configuration**: Resolved DLL compatibility issues (`WinError 1114`) by decoupling CUDA dependencies and enforcing CPU-specific PyTorch runtimes.
+*   **Process Management**: Implementation of strict process isolation during package updates to prevent file-locking conflicts in active development environments.
+*   **Metadata Integrity**: Standardized recovery protocols for corrupted environment metadata through enforced re-installation cycles.
 
-3. **NoneType Version Error**:
-   - **Cause**: Corrupted metadata after a failed install.
-   - **Fix**: Performed a `--force-reinstall` of affected packages.
+## Technical Stack
 
-##  Project Structure
-- `Embedding_Tech.ipynb`: Main notebook containing the splitting and embedding logic.
-- `README.md`: Module documentation and troubleshooting guide.
-- `faiss_index/`: (Optional) Local storage for the generated vector index.
+*   **Frameworks**: LangChain, FAISS-CPU.
+*   **Inference Engine**: PyTorch (Local CPU Execution).
+*   **Embedded Models**: Transformer-based architectures from Hugging Face Hub.
 
 ---
-*This module is part of the Generative AI Basic Projects series.*
