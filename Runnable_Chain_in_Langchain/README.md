@@ -17,15 +17,18 @@ Demonstrates the execution of multiple components in a strict linear order. The 
 ### Parallel Chain
 Utilizes `RunnableParallel` to execute multiple independent tasks concurrently. This implementation is optimized for performance when retrieving diverse datasets or performing multiple analysis tasks on a single input.
 
+### Lambda & Passthrough Chains
+Demonstrates the use of `RunnableLambda` for custom Python function integration and `RunnablePassthrough` for data flow management. This implementation illustrates how to perform supplemental computations (like word counting) while maintaining the original LLM response within a parallel processing framework.
+
 ### Conditional Chain
 Implements advanced decision-making logic using `RunnableBranch`. This chain dynamically routes inputs to specialized sub-chains based on real-time classification (e.g., sentiment analysis or intent detection).
 
 ## Technical Components
 
-*   **Runnable Interface**: Utilization of `RunnablePassthrough`, `RunnableLambda`, and `RunnableBranch` for state management and logic flow.
+*   **Runnable Interface**: Utilization of `RunnablePassthrough` (identity function), `RunnableLambda` (custom Python logic), `RunnableParallel` (concurrent tasks), and `RunnableBranch` (decision logic).
 *   **Prompt Engineering**: Implementation of `ChatPromptTemplate` with robust system instructions and partial variable injection.
-*   **Validation**: Integration of `PydanticOutputParser` for strict schema enforcement and type safety.
-*   **Providers**: Configuration with Groq (Llama) for high-speed inference.
+*   **Validation**: Integration of `StrOutputParser` and `PydanticOutputParser` for flexible output handling.
+*   **Providers**: Configuration with Groq (Llama 3.3) for high-speed inference.
 
 ## Usage
 
@@ -36,6 +39,6 @@ python Simple_chain.py
 python Sequential_chain.py
 python Parallel_chain.py
 python Conditional_chain.py
+python Runnable_lembda.py
 ```
 
-Ensure all environment variables are configured in the root `.env` file before execution.
