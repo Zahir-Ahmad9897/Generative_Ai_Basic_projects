@@ -6,6 +6,8 @@ langchain-core
 langchain-text-splitters
 langchain-groq
 sentence-transformers
+chromadb
+langchain-chroma
 
 langchain-openai
 langchain-huggingface
